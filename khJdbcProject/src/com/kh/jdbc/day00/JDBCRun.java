@@ -18,9 +18,7 @@ public class JDBCRun {
 		 * 6. 자원해제 					(close())
 		 */
 		try {
-			// String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			// 원격서버로 오라클 접속
-			String url = "jdbc:oracle:thin:@sonof.iptime.org:8507:xe";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "KH";
 			String password = "KH";
 			String sql = "SELECT * FROM EMPLOYEE";
