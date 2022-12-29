@@ -23,6 +23,34 @@ public class StudentView {
 			System.out.println();
 		}
 	}
+	
+	public String inputStudentId(String msg) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print(msg + "할 아이디 입력 : ");
+		String studentId = sc.next();
+		return studentId;
+	}
+	
+	public String inputStudentName(String msg) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print(msg + "할 이름 입력: ");
+		String studentName = sc.next();
+		return studentName;
+	}
+	
+	public void showOne(Student student) {
+		System.out.print("아이디 : " + student.getStudentId());
+		System.out.print(", 비밀번호 : " + student.getStudentPwd());
+		System.out.print(", 이름 : " + student.getStudentName());
+		System.out.print(", 성별 : " + student.getGender());
+		System.out.print(", 나이 : " + student.getAge());
+		System.out.print(", 이메일 : " + student.getEmail());
+		System.out.print(", 전화번호 : " + student.getPhone());
+		System.out.print(", 주소 : " + student.getAddress());
+		System.out.print(", 취미 : " + student.getHobby());
+		System.out.print(", 가입날짜 : " + student.getEnrollDate());
+		System.out.println();
+	}
 
 	public Student inputStudent() {
 		Scanner sc = new Scanner(System.in);
@@ -47,6 +75,29 @@ public class StudentView {
 		String hobby = sc.next();
 		Student student = new Student(studentId, studentName, studentPwd, gender, age, email, phone, address, hobby,
 				null);
+		return student;
+	}
+	
+	public Student modifyStudent(String msg, Student student) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print(msg+"할 비밀번호 입력 : ");
+		String studentPwd = sc.next();
+		System.out.print(msg+"할 이메일 입력 : ");
+		String email = sc.next();
+		System.out.print(msg+"할 전화번호 입력 : ");
+		String phone = sc.next();
+		System.out.print(msg+"할 주소 입력 : ");
+		sc.nextLine();
+		String addr = sc.nextLine();
+		System.out.print(msg+"할 취미 입력 : ");
+		String hobby = sc.next();
+		
+		student.setStudentPwd(studentPwd);
+		student.setEmail(email);
+		student.setPhone(phone);
+		student.setAddress(addr);
+		student.setHobby(hobby);
+		
 		return student;
 	}
 
